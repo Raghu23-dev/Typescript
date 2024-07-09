@@ -15,3 +15,25 @@ Types:
 11. never
 12. unknown
 ____________________________________
+
+Best Coding Practices:
+>>>file>>>500-600 words
+>>>methods>>>30 words
+>>>variable,methods>>>camelCase
+>>>constants>>>UPPER_CASE
+>>>class>>>PascalCase
+>>>filename>>>shopping-cart
+
+>>>Use parameter types
+>>>avoid 'any' instead use class.interface
+>>>Method documentation as well as param passed using '/** * /'
+
+>>>Methods,variables name should be meaningful
+>>>Use access modifiers wherever needed >>>public, private, protected
+>>>use TSLint
+>>>Limit the scope of variable
+>>>Use 'switch' instead of repeated 'if-else'
+>>>use 'try catch'and also log the error
+>>>'//TODO' for pending block of code
+>>>try to reuse the code as much as possible
+____________________________________

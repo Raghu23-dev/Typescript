@@ -1,0 +1,17 @@
+Types:
+1. number
+2. string
+3. boolean
+
+4. null
+5. undefined
+6. void
+
+7. object
+8. array
+9. tuples
+
+10. any >>> not a king of types its just like a marker
+11. never
+12. unknown
+____________________________________

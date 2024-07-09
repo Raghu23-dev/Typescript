@@ -15,3 +15,16 @@ Types:
 11. never
 12. unknown
 ____________________________________
+Arrow Function:
+let loginUser=(email:string,password:string):boolean=>{return true}
+
+Function:
+1.If not return anything better use >> void >> function loginUser(email:string,password:string):void
+                                               {
+                                               console.log("Success")
+                                               }
+2.Else >> function loginUser(name:string,password:string):boolean
+          {
+          return true
+          }
+_____________________________________

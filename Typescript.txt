@@ -1,21 +1,3 @@
-Types:
-1. number
-2. string
-3. boolean
-
-4. null
-5. undefined
-6. void
-
-7. object
-8. array
-9. tuples
-
-10. any >>> not a king of types its just like a marker
-11. never
-12. unknown
-____________________________________
-
 Best Coding Practices:
 >>>file>>>500-600 words
 >>>methods>>>30 words
@@ -37,6 +19,23 @@ Best Coding Practices:
 >>>'//TODO' for pending block of code
 >>>try to reuse the code as much as possible
 ____________________________________
+Types:
+1. number
+2. string
+3. boolean
+
+4. null
+5. undefined
+6. void
+
+7. object
+8. array
+9. tuples
+
+10. any >>> not a king of types its just like a marker
+11. never
+12. unknown
+____________________________________
 Arrow Function:
 let loginUser=(email:string,password:string):boolean=>{return true}
 
@@ -50,3 +49,128 @@ Function:
           return true
           }
 _____________________________________
+Objects:
+Example:
+
+>>>Gets an object as parameter
+function createUser({name:string,isPaid:boolean}){
+    console.log("Success")
+}
+createUser({name:"User1",isPaid:true})
+
+>>>Return an object
+function createCourse():{name:string,price:number}{
+    return {name:"Java",price:499}
+}
+console.log(createCourse())
+____________________________________
+Typealiases:Used for Readability, Reusability
+
+type User={name:string,email:string}>>>whenever declared this type we must pass these values
+
+function createUser(User):User{
+    return {name:User.name,email:User.email}
+}
+createUser({name:"User1",email:"user1@gmail.com"})
+____________________________________
+************************************
+readonly>>>cannot manipulate
+?>>>optional
+&>>>combine those
+************************************
+____________________________________
+Arrays:
+Defining>>>
+const user:string[]=["a"]
+const user:Array<string>=["a"]
+
+2D array>>>
+const user:string[][]=[
+    ["a","b","c"],
+    ["x","y","z"],
+    ["p","q","r"]
+]
+
+Own Types>>>
+type User={name:string,age:number}
+const userArray:User[]=[]
+____________________________________
+Union Types:
+>>>let score: number | string =0
+>>>We can use with own types as well
+>>>For Array to accept different types>>>const data:(string | number | boolean )[]=[]
+____________________________________
+Tuples:It is a kind of an array with some restrictions.
+
+>>>let user:[string,boolean]=["a",true] 
+user[1]=false
+____________________________________
+Enums:
+>>>If not assigned, default is 0 and the next value will assigned in incremented order.
+>>>If string is assigned, next variable need to be iniialized no matter what type.
+
+Example>>>
+enum seat{
+    AISLE=0,
+    MIDDLE,>>>1
+    WINDOWS>>>2
+}
+
+enum seat1{
+    AISLE="aisle",
+    MIDDLE=0,
+    WINDOW>>>1
+}
+____________________________________
+Interface:
+>>>Can be extended or reopened not like type which cannot be changed after creation
+
+Example:
+interface user{
+    readonly dbID:number,
+    name:string,
+    email:string,
+    id:number,
+    startTrail():string,
+    getCoupon(couponName:string,value:number):number
+}
+>>>can reopen 
+interface user{
+    age:number
+}
+>>>can use inheritance
+interface user extends admin{
+    role:string1
+}
+>>>Execution
+const user1: User = {
+    dbID: 1,
+    name: "abc",
+    email: "abc@gmail.com",
+    id: 23,
+    startTrial() {
+        return "abc";
+    },
+    getCoupon(couponName = 'welcome', value=10) {
+        return value;
+    }
+}
+____________________________________
+Setup Typescript for Projects:
+
+>>>tsc --init>>>creates tsconfig.json
+>>>npm init -y>>>creates package.json
+
+Usually
+>>>src>>>write the code
+>>>dist>>>production that serve to end user
+
+In tsconfig.json
+>>outDir:"./">>>where the output of the file should go
+>>>tsc -W>>>will watch based on tsconfig
+
+to start server withour live server>>>we have lite-server
+>>>npm i lite-server
+>>>package.json>>>"start":"lite-server"
+>>>npm start
+____________________________________
